@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" >
-  <meta name="viewport" content="width=device-width, initial-scale=1" >
-  <meta name="description" content="Projects - Portfolio" >
+  <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Projects - Portfolio">
   <title>Projects | Portfolio</title>
 </head>
 <body>
@@ -23,25 +25,39 @@
   <main>
     <section id="project1">
       <h2>Project One</h2>
-      <picture>
-        <source media="(min-width: 600px)" srcset="images/project1-large.jpg" >
-        <img src="images/project1-small.jpg" alt="Screenshot of Project One" >
-      </picture>
+      <figure>
+        <picture>
+          <img 
+            src="Project 1 Image.png" 
+            alt="Screenshot of Project One" 
+            loading="lazy" 
+            width="600" 
+            height="400">
+        </picture>
+      <figcaption>Portfolio site built with semantic HTML.</figcaption>
+      </figure>
       <p>This project is a simple portfolio site built with semantic HTML.</p>
     </section>
 
     <section id="project2">
-      <h2>Project Two</h2>
-      <picture>
-        <source media="(min-width: 600px)" srcset="images/project2-large.jpg" >
-        <img src="images/project2-small.jpg" alt="Screenshot of Project Two" >
-      </picture>
-      <p>A responsive website demonstrating CSS Grid and Flexbox layouts.</p>
-    </section>
+  <h2>Project Two</h2>
+  <figure>
+    <picture>
+      <img 
+        src="Project 1 Image.png" 
+        alt="Screenshot of Project One" 
+        loading="lazy" 
+        width="600" 
+        height="400">
+    </picture>
+    <figcaption>Responsive layout built with CSS Grid & Flexbox.</figcaption>
+  </figure>
+  <p>A responsive website demonstrating CSS Grid and Flexbox layouts.</p>
+</section>
   </main>
 
   <footer>
     <p>Jorge Silva</p>
   </footer>
 </body>
-</html>
+</html> 
