@@ -1,37 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form (No JS)</title>
-    <link rel="stylesheet" href="form-no-js.css">
+  <meta charset="UTF-8">
+  <title>Contact Form (No JS)</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 350px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: -0.5rem;
+    }
+
+    input, textarea {
+      font-size: 1rem;
+      padding: 0.6rem;
+      border-radius: 5px;
+      border: 1px solid #777;
+      width: 100%;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      padding: 0.7rem;
+      background: #0077ff;
+      color: white;
+      border: none;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #005fe0;
+    }
+
+    /* Output elements */
+    output {
+      display: block;
+      min-height: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    #form-error {
+      color: red;
+    }
+
+    #form-info {
+      color: green;
+    }
+  </style>
 </head>
+
 <body>
+  <form action="https://httpbin.org/post" method="POST">
 
-<main>
-    <h1>Contact Us</h1>
+    <label for="name">Name <span aria-hidden="true">*</span></label>
+    <input id="name" name="name" required>
 
-    <form action="https://httpbin.org/post" method="POST">
-        
-        <input type="hidden" name="possible_bot" value="true">
+    <label for="email">Email <span aria-hidden="true">*</span></label>
+    <input id="email" type="email" name="email" required>
 
-        <label for="name">Name:</label>
-        <input id="name" name="name" type="text" required>
+    <label for="comments">Comments <span aria-hidden="true">*</span></label>
+    <textarea id="comments" name="comments" required></textarea>
 
-        <label for="email">Email:</label>
-        <input id="email" name="email" type="email" required>
+    <!-- REQUIRED hidden field -->
+    <input type="hidden" name="possible_bot" value="true">
 
-        <label for="comments">Comments:</label>
-        <textarea id="comments" name="comments" required></textarea>
+    <button type="submit">Submit</button>
 
-        <button type="submit">Submit</button>
+    <!-- These must be here for Parts 2 and 3 -->
+    <output id="form-error"></output>
+    <output id="form-info"></output>
 
-        <output id="error-area" aria-live="polite"></output>
-        <output id="info-area" aria-live="polite"></output>
-
-    </form>
-
-</main>
-
+  </form>
 </body>
 </html>
