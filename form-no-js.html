@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form (No JS)</title>
+    <link rel="stylesheet" href="form-no-js.css">
+</head>
+<body>
+
+<main>
+    <h1>Contact Us</h1>
+
+    <form action="https://httpbin.org/post" method="POST">
+        
+        <input type="hidden" name="possible_bot" value="true">
+
+        <label for="name">Name:</label>
+        <input id="name" name="name" type="text" required>
+
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments" required></textarea>
+
+        <button type="submit">Submit</button>
+
+        <output id="error-area" aria-live="polite"></output>
+        <output id="info-area" aria-live="polite"></output>
+
+    </form>
+
+</main>
+
+</body>
+</html>
