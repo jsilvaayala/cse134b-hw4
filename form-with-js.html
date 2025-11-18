@@ -77,7 +77,7 @@
 
 <body>
 
-<form action="https://httpbin.org/post" method="POST">
+<form action="https://httpbin.org/post" method="POST" novalidate>
 
   <label for="name">Name*</label>
   <input id="name" name="name" placeholder="Your name"
@@ -111,7 +111,6 @@
 
   let form_errors = [];
 
-  // --- Flash error helper ---
   function flashError(message, field) {
     errorOutput.textContent = message;
     field.style.borderColor = "red";
@@ -121,7 +120,6 @@
     }, 1500);
   }
 
-  // --- Name illegal character detection ---
   nameField.addEventListener("input", () => {
     const pattern = /^[A-Za-z ]*$/;
     if (!pattern.test(nameField.value)) {
@@ -130,7 +128,6 @@
     }
   });
 
-  // --- Comments character countdown ---
   const maxComments = parseInt(commentsField.getAttribute("maxlength"));
   commentsField.addEventListener("input", () => {
     const remaining = maxComments - commentsField.value.length;
@@ -138,7 +135,6 @@
     infoOutput.style.color = remaining <= 10 ? "orange" : "darkblue";
   });
 
-  // --- Form submit validation ---
   form.addEventListener("submit", (e) => {
     form_errors = [];
     errorOutput.textContent = "";
@@ -168,7 +164,7 @@
       }
       hidden.value = JSON.stringify(form_errors);
 
-      console.log(form_errors); // optional
+      console.log(form_errors); 
     }
   });
 </script>
